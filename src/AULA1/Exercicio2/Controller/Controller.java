@@ -1,4 +1,4 @@
-package AULA1.Exercicio2;
+package AULA1.Exercicio2.Controller;
 
 public class Controller {
 

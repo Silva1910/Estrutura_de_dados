@@ -1,6 +1,6 @@
 package AULA1.Exercicio2.view;
 
-import AULA1.Exercicio2.*;
+import AULA1.Exercicio2.Controller.*;
 
 public class principal {
 
