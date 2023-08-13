@@ -1,4 +1,4 @@
-package controller;
+package AULA1.Exercicio5.controller;
 
 public class quinto_exerc {
 
@@ -15,5 +15,3 @@ public class quinto_exerc {
 	        }
 	    }
 	}
-
-

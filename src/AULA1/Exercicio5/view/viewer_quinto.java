@@ -1,6 +1,6 @@
-package view;
+package AULA1.Exercicio5.view;
 
-import controller.quinto_exerc;
+import AULA1.Exercicio5.controller.*;
 
 public class viewer_quinto {
 
