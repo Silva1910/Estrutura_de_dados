@@ -1,6 +1,7 @@
 package AULA2.Exercicio1.view;
 
-import AULA2.Exercicio1.exercicio1;
+import AULA2.Exercicio1.Controller.exercicio1;
+
 public class Principal {
 
 	public static void main(String[] args) {

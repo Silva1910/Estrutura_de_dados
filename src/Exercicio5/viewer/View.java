@@ -1,8 +1,8 @@
-package AULA2.Exercicio5;
+package Exercicio5.viewer;
 
-import AULA2.Exercicio5.Controller.exercicio5;
+import Exercicio5.Controller.exercicio5;
 
-public class view {
+public class View {
 	public static void main(String[] args) {
 		int x = 21; 
 	    int y  =15;
