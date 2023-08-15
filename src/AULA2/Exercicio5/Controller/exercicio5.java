@@ -1,7 +1,6 @@
-package Exercicio5.Controller;
+package AULA2.Exercicio5.Controller;
 
 public class exercicio5 {
-
 	public exercicio5() {
 		super();
 	}
@@ -17,5 +16,4 @@ public class exercicio5 {
 			return exercicio5(y,x);
 		}
 	}
-
 }
