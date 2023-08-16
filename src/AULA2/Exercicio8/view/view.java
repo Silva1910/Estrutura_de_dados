@@ -3,7 +3,7 @@ import AULA2.Exercicio8.Controller.*;
 public class view {
 
 	public static void main(String[] args) {
-		Controller Controller = new Controller();
+		controller Controller = new controller();
         String Palavra = "teste";
 
         String temp = Controller.invertePalavra(Palavra);
