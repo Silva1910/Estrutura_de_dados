@@ -3,7 +3,7 @@ import AULA2.Exercicios10.Controller.*;
 public class view {
 
 	public static void main(String[] args) {
-		Controller Controller = new Controller();
+		controller Controller = new controller();
 		int n =6;
 		
 		int temp = Controller.Controller(n);

@@ -3,7 +3,7 @@ import AULA2.Exercicio9.Controller.*;
 public class View {
 
 	public static void main(String[] args) {
-	Controller Controller = new Controller();
+	controller Controller = new controller();
 	
 	 int n =25;
 	 String binario = "";

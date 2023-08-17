@@ -5,7 +5,7 @@ import AULA2.Exercicios11.Controller.*;
 public class view {
 
 	public static void main(String args[]) {
-		Controller Controller = new Controller();
+		controller Controller = new controller();
 		int n = 5;
 
 		double temp = Controller.serie(n);

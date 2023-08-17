@@ -1,8 +1,8 @@
 package AULA2.Exercicios11.Controller;
 
-public class Controller {
+public class controller {
 
-	public Controller() {
+	public controller() {
 		super ();
 	}
 	public int Controller(int n){
@@ -14,10 +14,10 @@ public class Controller {
 	    }
 
 	    public double serie(int n) {
-	        if (n == 1) {
+	        if (n == 1) {  // condicao de parada
 	            return 1.0;
 	        } else {
-	            return 1.0/Controller(n) + serie(n-1);
+	            return 1.0/Controller(n) + serie(n-1); // chamada da funcao
 	        }
 	    }
 	}
