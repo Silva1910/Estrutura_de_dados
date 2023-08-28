@@ -6,5 +6,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="src/lib/bubble.jar"/>
+	<classpathentry kind="lib" path="src/lib/merge.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
