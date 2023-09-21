@@ -14,7 +14,7 @@ public class main {
         FatPilha fc = new FatPilha();
 
         try {
-            System.out.println("O fatorial de " + num + " é " + fc.FatPilha(num));
+            System.out.println("O fatorial de " + num + " ==> " + fc.FatPilha(num));
         } catch (Exception e) {
             e.printStackTrace();
         }

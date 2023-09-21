@@ -8,7 +8,7 @@ public class FatPilha {
 	}
 
 	public long FatPilha(int valor) throws Exception {
-		PlhaInteiros p = new PlhaInteiros();
+		PilhaInteiros p = new PilhaInteiros();
 		while (valor > 1) {
 			p.push(valor);
 			valor = valor - 1;
