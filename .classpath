@@ -12,5 +12,6 @@
 	<classpathentry kind="lib" path="src/lib/PilhaInteiros.jar"/>
 	<classpathentry kind="lib" path="src/lib/PilhaString.jar"/>
 	<classpathentry kind="lib" path="src/lib/Fila.jar"/>
+	<classpathentry kind="lib" path="src/lib/Lista.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
