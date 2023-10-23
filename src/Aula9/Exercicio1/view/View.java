@@ -1,6 +1,6 @@
 package Aula9.Exercicio1.view;
 
-import lib.Lista;
+import LibLista.Lista;
 
 public class View {
 
