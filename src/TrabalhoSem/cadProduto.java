@@ -12,8 +12,12 @@ import javax.swing.JToggleButton;
 import javax.swing.JLabel;
 import javax.swing.JScrollBar;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JScrollPane;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 
 public class cadProduto extends JFrame {
@@ -34,6 +38,7 @@ public class cadProduto extends JFrame {
 				try {
 					cadProduto frame = new cadProduto();
 					frame.setVisible(true);
+					  frame.setResizable(false);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -119,12 +124,46 @@ public class cadProduto extends JFrame {
 		comboBoxModel.addElement("Bens de Consumo");
 		comboBoxModel.addElement("Produtos ao Consumidor");
 		JComboBox<String> comboBox = new JComboBox<>(comboBoxModel);
-		comboBox.setBounds(455, 249, 181, 22);
+		comboBox.setBounds(458, 237, 181, 22);
 		contentPane_1.add(comboBox);
 		
 		JLabel lblNewLabel_6 = new JLabel("TIPO DE PRODUTO");
 		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel_6.setBounds(458, 221, 181, 20);
+		lblNewLabel_6.setBounds(458, 206, 181, 20);
 		contentPane_1.add(lblNewLabel_6);
+		
+		
+		
+        
+	
+		
+		JButton btnVoltar = new JButton("Voltar");
+	        btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 16));
+	        btnVoltar.setBounds(430, 285, 110, 30);
+	        contentPane_1.add(btnVoltar);
+	        
+	        JButton btnCadastrar = new JButton("Cadastrar");
+	        btnCadastrar.setFont(new Font("Tahoma", Font.PLAIN, 16));
+	        btnCadastrar.setBounds(550, 285, 110, 30);
+	        contentPane_1.add(btnCadastrar);
+	
+	
+	
+	
+	
+
+
+    btnVoltar.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            // Cria uma instância da tela inicial (classe ED) e a torna visível
+        	TelaInicial telaInicial = new TelaInicial();
+            telaInicial.setVisible(true);
+
+            // Fecha o frame atual
+            dispose();
+        }
+    });
+	
+	
 	}
 }

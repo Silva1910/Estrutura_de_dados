@@ -18,7 +18,7 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.UIManager;
 
-public class ED extends JFrame {
+public class TelaInicial extends JFrame {
 
 	private JPanel contentPane;
 
@@ -29,8 +29,9 @@ public class ED extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ED frame = new ED();
+					TelaInicial frame = new TelaInicial();
 					frame.setVisible(true);
+					 frame.setResizable(false);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -41,7 +42,7 @@ public class ED extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ED() {
+	public TelaInicial() {
 		getContentPane().setLayout(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 690, 360);
@@ -64,14 +65,14 @@ public class ED extends JFrame {
 		btnClienteCadastro.setToolTipText("CADASTRAR  CLIENTES");
 		btnClienteCadastro.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnClienteCadastro.setBackground(new Color(255, 255, 255));
-		btnClienteCadastro.setBounds(20, 132, 165, 23);
+		btnClienteCadastro.setBounds(20, 90, 165, 23);
 		panelCliente.add(btnClienteCadastro);
 
 		JButton btnClienteConsulta = new JButton("CONSULTA");
 		btnClienteConsulta.setToolTipText("CONSULTAR CLIENTES");
 		btnClienteConsulta.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnClienteConsulta.setBackground(new Color(255, 255, 255));
-		btnClienteConsulta.setBounds(20, 166, 165, 23);
+		btnClienteConsulta.setBounds(20, 124, 165, 23);
 		panelCliente.add(btnClienteConsulta);
 
 		JButton btnClienteExcluir = new JButton("EXCLUIR");
@@ -82,7 +83,7 @@ public class ED extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnClienteExcluir.setBounds(20, 200, 165, 23);
+		btnClienteExcluir.setBounds(20, 158, 165, 23);
 		panelCliente.add(btnClienteExcluir);
 
 		JLabel lblCliente = new JLabel("CLIENTE");
@@ -90,13 +91,13 @@ public class ED extends JFrame {
 		lblCliente.setFont(new Font("Tahoma", Font.BOLD, 22));
 		lblCliente.setBounds(46, 34, 139, 27);
 		panelCliente.add(lblCliente);
-
-		JButton btnClienteCompra = new JButton("COMPRA");
-		btnClienteCompra.setToolTipText("EFETUAR COMPRA");
-		btnClienteCompra.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnClienteCompra.setBackground(new Color(255, 255, 255));
-		btnClienteCompra.setBounds(20, 98, 165, 23);
-		panelCliente.add(btnClienteCompra);
+		
+		JButton btnClienteCheckout = new JButton("CHECKOUT");
+		btnClienteCheckout.setBounds(20, 192, 165, 23);
+		panelCliente.add(btnClienteCheckout);
+		btnClienteCheckout.setToolTipText("CHECKOUT");
+		btnClienteCheckout.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnClienteCheckout.setBackground(Color.WHITE);
 
 		JPanel panelProduto = new JPanel();
 		panelProduto.setForeground(new Color(255, 255, 255));
@@ -121,7 +122,7 @@ public class ED extends JFrame {
 		panelProduto.add(btnProdutoConsulta);
 
 		JButton btnProdutoExcluir = new JButton("EXCLUIR");
-		btnProdutoExcluir.setToolTipText("EXCLUSAO DE CLIENTES");
+		btnProdutoExcluir.setToolTipText("EXCLUSAO DE PRODUTOS");
 		btnProdutoExcluir.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnProdutoExcluir.setBackground(new Color(255, 255, 255));
 		btnProdutoExcluir.setBounds(20, 200, 165, 23);
@@ -173,13 +174,31 @@ public class ED extends JFrame {
 		lblTelaInicial.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lblTelaInicial.setBounds(250, 11, 236, 31);
 		contentPane.add(lblTelaInicial);
+		
+				JButton btnCarrinho = new JButton("CARRINHO");
+				btnCarrinho.setBounds(529, 19, 114, 23);
+				contentPane.add(btnCarrinho);
+				btnCarrinho.setToolTipText("CARRINHO");
+				btnCarrinho.setFont(new Font("Tahoma", Font.BOLD, 14));
+				btnCarrinho.setBackground(new Color(255, 255, 255));
+				
+						// ActionListener para o botão COMPRA
+						btnCarrinho.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent e) {
+								CompraClienteFrame CompraCliente = new CompraClienteFrame(TelaInicial.this, true);
+								CompraCliente.setVisible(true);
+							}
+						});
+						
+						
 
 		// ActionListener para o botão de CADASTRO do CLIENTE
 		   btnClienteCadastro.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
 	                // Cria uma instância da classe pfoupj e a torna visível
-	                pfoupj pfoupjFrame = new pfoupj();
-	                pfoupjFrame.setVisible(true);
+	            	ClienteCpfouCnpj ClienteCpfouCnpjjFrame = new ClienteCpfouCnpj();
+	            	ClienteCpfouCnpjjFrame.setVisible(true);
+	                
 
 	                // Fecha o frame atual, se necessário
 	                 setVisible(false);
@@ -191,63 +210,43 @@ public class ED extends JFrame {
 		// ActionListener para o botão de CONSULTA do CLIENTE
 		btnClienteConsulta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ConsultaClienteFrame consultaCliente = new ConsultaClienteFrame(ED.this, true);
-				consultaCliente.setVisible(true);
+				  conCliente conClientejFrame = new conCliente();
+				  conClientejFrame.setVisible(true);
+
+	                // Fecha o frame atual, se necessário
+	                 setVisible(false);
+	                 dispose();
 			}
 		});
 
 		// ActionListener para o botão de EXCLUIR do CLIENTE
 		btnClienteExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ExcluirClienteFrame excluirCliente = new ExcluirClienteFrame(ED.this, true);
-				excluirCliente.setVisible(true);
+				excCliente excClientejFrame = new excCliente();
+				  excClientejFrame.setVisible(true);
+
+	                // Fecha o frame atual, se necessário
+	                 setVisible(false);
+	                 dispose();
 			}
 		});
 
-		// ActionListener para o botão COMPRA
-		btnClienteCompra.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				CompraClienteFrame CompraCliente = new CompraClienteFrame(ED.this, true);
-				CompraCliente.setVisible(true);
-			}
-		});
-
-		// ActionListener para o botão CADASTRO do PRODUTO
 		btnProdutoCadastro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CadastroProdutoFrame cadastroProduto = new CadastroProdutoFrame(ED.this, true);
-				cadastroProduto.setVisible(true);
+				cadProduto cadProdutojFrame = new cadProduto();
+				cadProdutojFrame.setVisible(true);
+
+	                // Fecha o frame atual, se necessário
+	                 setVisible(false);
+	                 dispose();
+				
+				
 			}
 		});
-
-		// ActionListener para o botão CONSULTA do PRODUTO
-		btnProdutoConsulta.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				ConsultaProdutoFrame consultaProduto = new ConsultaProdutoFrame(ED.this, true);
-				consultaProduto.setVisible(true);
-			}
-		});
-
-		// ActionListener para o botão EXCLUIR do PRODUTO
-		btnProdutoExcluir.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				ExcluirProdutoFrame excluirProduto = new ExcluirProdutoFrame(ED.this, true);
-				excluirProduto.setVisible(true);
-			}
-		});
-
-		// ActionListener para o botão CADASTRO do TIPO DO PRODUTO
-		btnTipoProdutoCadastro.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				CadastroTipoProdutoFrame cadastroTipoProduto = new CadastroTipoProdutoFrame(ED.this, true);
-				cadastroTipoProduto.setVisible(true);
-			}
-		});
-
-		// ActionListener para o botão CONSULTA do TIPO DO PRODUTO
+				// ActionListener para o botão CONSULTA do TIPO DO PRODUTO
 		btnTipoProdutoConsulta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ConsultaTipoProdutoFrame consultaTipoProduto = new ConsultaTipoProdutoFrame(ED.this, true);
+				ConsultaTipoProdutoFrame consultaTipoProduto = new ConsultaTipoProdutoFrame(TelaInicial.this, true);
 				consultaTipoProduto.setVisible(true);
 			}
 		});
@@ -255,58 +254,44 @@ public class ED extends JFrame {
 		// ActionListener para o botão EXCLUIR do TIPO DO PRODUTO
 		btnTipoProdutoExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ExcluirTipoProdutoFrame excluirTipoProduto = new ExcluirTipoProdutoFrame(ED.this, true);
-				excluirTipoProduto.setVisible(true);
+				excTipoProduto excTipoProdutojFrame = new excTipoProduto();
+				excTipoProdutojFrame.setVisible(true);
+
+	                // Fecha o frame atual, se necessário
+	                 setVisible(false);
+	                 dispose();
+							}
+		});
+		btnProdutoExcluir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				excProduto excProdutojFrame = new excProduto();
+				excProdutojFrame.setVisible(true);
+
+	                // Fecha o frame atual, se necessário
+	                 setVisible(false);
+	                 dispose();
+							}
+		});
+	
+		btnTipoProdutoCadastro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cadTipoProduto cadTipoProdutojFrame = new cadTipoProduto();
+				cadTipoProdutojFrame.setVisible(true);
+
+	                // Fecha o frame atual, se necessário
+	                 setVisible(false);
+	                 dispose();
+				
+				
 			}
 		});
+		
+			
+	
 	}
 
-	class CadastroClienteDialog extends JDialog {
-		public CadastroClienteDialog(JFrame parent, boolean modal) {
-			super(parent, "Cadastro de Cliente", modal);
-			setBounds(100, 100, 690, 360);
-			contentPane = new JPanel();
-			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-			setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			setLocationRelativeTo(parent);
-			JButton novoBotao = new JButton("Novo Botão");
-	        novoBotao.setBounds(10, 10, 10, 30);
-	        getContentPane().add(novoBotao);
-		}
-	}
-
-	class ConsultaClienteFrame extends JDialog {
-		public ConsultaClienteFrame(JFrame parent, boolean modal) {
-			super(parent, "Consulta de Cliente", modal);
-			setBounds(100, 100, 690, 360);
-			contentPane = new JPanel();
-			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-			setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-			setLocationRelativeTo(parent);
-		}
-	}
-
-	class ExcluirClienteFrame extends JDialog {
-		public ExcluirClienteFrame(JFrame parent, boolean modal) {
-			super(parent, "Exclusao de Cliente", modal);
-			setBounds(100, 100, 690, 360);
-			contentPane = new JPanel();
-			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-			setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-			setLocationRelativeTo(parent);
-		}
-	}
-
-	class CadastroTipoProdutoFrame extends JDialog {
-		public CadastroTipoProdutoFrame(JFrame parent, boolean modal) {
-			super(parent, "Cadastro de Tipo de Produto", modal);
-			setBounds(100, 100, 690, 360);
-			contentPane = new JPanel();
-			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-			setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-			setLocationRelativeTo(parent);
-		}
-	}
+	
+	
 
 	class ConsultaTipoProdutoFrame extends JDialog {
 		public ConsultaTipoProdutoFrame(JFrame parent, boolean modal) {
@@ -374,5 +359,4 @@ public class ED extends JFrame {
 			setLocationRelativeTo(parent);
 		}
 	}
-
 }

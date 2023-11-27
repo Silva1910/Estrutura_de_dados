@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import java.awt.Color;
 
-public class pfoupj extends JFrame {
+public class ClienteCpfouCnpj extends JFrame {
 
 	private JPanel contentPane;
 
@@ -24,8 +24,9 @@ public class pfoupj extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					pfoupj frame = new pfoupj();
+					ClienteCpfouCnpj frame = new ClienteCpfouCnpj();
 					frame.setVisible(true);
+					  frame.setResizable(false);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -36,7 +37,7 @@ public class pfoupj extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public pfoupj() {
+	public ClienteCpfouCnpj() {
 		getContentPane().setLayout(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 690, 360);
@@ -48,29 +49,35 @@ public class pfoupj extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("ESCOLHA QUAL O TIPO DE CLIENTE");
+		lblNewLabel.setToolTipText("ESCOLHA CADASTRAR O CLIENTE POR CPF OU CNPJ");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 21));
 		lblNewLabel.setBounds(118, 21, 395, 44);
 		contentPane.add(lblNewLabel);
 		
 		JButton btnClienteCpf = new JButton("CPF");
+		btnClienteCpf.setToolTipText("CADASTRAR CLIENTE POR CPF");
 		btnClienteCpf.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnClienteCpf.setBounds(198, 111, 229, 44);
 		contentPane.add(btnClienteCpf);
 		
 		JButton btnClienteCnpj = new JButton(" CNPJ");
+		btnClienteCnpj.setToolTipText("CADASTRAR CLIENTE POR CNPJ");
 		btnClienteCnpj.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnClienteCnpj.setBounds(198, 182, 229, 44);
 		contentPane.add(btnClienteCnpj);
 
 		 JButton btnVoltar = new JButton("Voltar");
-	        btnVoltar.setFont(new Font("Tahoma", Font.BOLD, 20));
-	        btnVoltar.setBounds(564, 11, 100, 30);
+		 btnVoltar.setToolTipText("VOLTAR A TELA ANTERIOR");
+	        btnVoltar.setFont(new Font("Tahoma", Font.BOLD, 16));
+	        btnVoltar.setBounds(550, 285, 110, 30);
 	        contentPane.add(btnVoltar);
 	        
+	    	
+			
 	        btnClienteCpf.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
 	                // Cria uma instância da classe pfoupj e a torna visível
-	            	clienteCpf clienteCpfjFrame = new clienteCpf();
+	            	cadCpf clienteCpfjFrame = new cadCpf();
 	            	clienteCpfjFrame.setVisible(true);
 
 	                // Fecha o frame atual, se necessário
@@ -81,7 +88,7 @@ public class pfoupj extends JFrame {
 	        btnClienteCnpj.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
 	                // Cria uma instância da classe pfoupj e a torna visível
-	            	clienteCnpj clienteCnpjjFrame = new clienteCnpj();
+	            	cadCnpj clienteCnpjjFrame = new cadCnpj();
 	            	clienteCnpjjFrame.setVisible(true);
 
 	                // Fecha o frame atual, se necessário
@@ -95,7 +102,7 @@ public class pfoupj extends JFrame {
 	        btnVoltar.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
 	                // Cria uma instância da tela inicial (classe ED) e a torna visível
-	                ED telaInicial = new ED();
+	            	TelaInicial telaInicial = new TelaInicial();
 	                telaInicial.setVisible(true);
 
 	                // Fecha o frame atual
